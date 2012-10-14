@@ -6,10 +6,9 @@
  * To change this template use File | Settings | File Templates.
  */
 Model = {
-    login: require('./userLoginModel')
-  ,  main: require('./mainModel')
-  ,   app: require('./appModel')
-  , place: require('./placeModel')
+    authentication: require('./authentication')
+  ,            app: require('./app')
+  ,          place: require('./place')
 };
 
 module.exports = Model;

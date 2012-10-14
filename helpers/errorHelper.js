@@ -28,6 +28,7 @@ const errorCodes = {
   , userNotExist: 66000
   , invalidSignupData: 66001
   , invalidArguments: 66002
+  , userAlreadyExists: 66003
 };
 
 const errorCodeMessages = {
@@ -35,6 +36,7 @@ const errorCodeMessages = {
   , 66000: "Wrong user name or password"
   , 66001: "User name or password did not met the requirments."
   , 66002: "Invalid arguments provided."
+  , 66003: "User already exists."
 };
 
 module.exports = errorCodes;

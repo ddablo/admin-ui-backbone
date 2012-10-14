@@ -1,0 +1,4 @@
+addr="http://localhost:3002"
+
+echo "register user"
+curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"inputEmail": "1@1.com", "inputPassword": "Password1!"}'  $addr/register

@@ -7,10 +7,5 @@
  */
 
 exports.view = function(req, res){
-    res.render('main', { title: 'Welcome to Placer', ignoreDefaultBack:true });
-
-};
-
-exports.consoleView = function(req, res){
-    res.render('console', { title: 'Console' });
+    res.render('index', { title: 'Express' });
 };
