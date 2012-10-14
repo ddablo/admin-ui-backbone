@@ -1,0 +1,23 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.css')
+
+  body
+
+        include templates/templates
+
+script(data-main="/javascripts/models/main", src='/javascripts/require-jquery.js')
+script(src='/javascripts/bootstrap.js', type='text/javascript')
+script(src='http://underscorejs.org/underscore.js', type='text/javascript')
+script(src='http://backbonejs.org/backbone.js', type='text/javascript')
+
+script(src='/javascripts/models/menus/left/left.js', type='text/javascript')
+script(src='/javascripts/models/layouts/detailsLayout/detailsLayout.js', type='text/javascript')
+script(src='/javascripts/models/user/authentication.js', type='text/javascript')
+script(src='/javascripts/models/appMain.js', type='text/javascript')
+script(src='/javascripts/models/route/route.js', type='text/javascript')
+

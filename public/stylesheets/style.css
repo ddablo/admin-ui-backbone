@@ -1,0 +1,14 @@
+body {
+  padding: 60px 50px 50px 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.clearAll{
+    padding: 0 !important;
+    margin: 0 !important;
+    clear: both !important;
+}
+
+.line{
+    list-style-type: none;
+}

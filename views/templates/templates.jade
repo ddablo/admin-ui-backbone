@@ -1,0 +1,141 @@
+// link template
+script(type='text/html', id='linkTemplate')
+   a(href!='#detailsView/<%=href%>')
+       <%=title%>
+// quick user not login template
+script(type='text/html', id='quickUserNotLogin')
+    a(href="#myModal", role="button", data-toggle="modal") Signin
+
+// quick user login template
+script(type='text/html', id='quickUserLogin')
+    .btn-group
+        a.btn(href="#mainView/myApps") My apps
+        a.btn(href="#mainView/userDetails") <%=userName%>
+
+// model
+script(type='text/html', id='modelTemplate')
+    div(class="modal hide fade out loginView", id="myModal", tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true", style="display:none")
+      div(class="modal-header")
+        button(type="button", class="close", data-dismiss="modal", aria-hidden="true") ×
+        h3(id="myModalLabel") Sign-in
+
+
+      div(class="modal-body")
+        p.loginViewForm
+
+      div(class="modal-footer")
+        //button(class="btn", data-dismiss="modal", aria-hidden="true") Close
+        button(class="btn btn-primary modelOk") Sign-in
+
+
+// login form
+script(type='text/html', id='loginForm')
+    form.form-horizontal(name='login', action='/user')
+      .control-group
+        label.control-label(for="inputEmail") Email
+        .controls
+          input(type="text", id="inputEmail", name="inputEmail", placeholder="Email")
+
+      .control-group
+        label.control-label(for="inputPassword") Password
+        .controls
+          input(type="password", id="inputPassword", placeholder="Password")
+      .control-group
+        .controls
+          label.checkbox Remember me
+            input(type="checkbox")
+    a(href="#signUp") need an account?
+
+// sign up form
+script(type='text/html', id='loginForm')
+    form.form-horizontal(name='signupForm', action='/user/create')
+      .control-group
+        label.control-label(for="inputEmail") Email
+        .controls
+          input(type="text", id="inputEmail", name="inputEmail", placeholder="Email")
+
+      .control-group
+        label.control-label(for="inputPassword") Password
+        .controls
+          input(type="password", id="inputPassword", placeholder="Password")
+      .control-group
+              label.control-label(for="rePassword") Re-type Password
+              .controls
+                input(type="password", id="inputPassword", placeholder="Re-type Password")
+      .control-group
+        .controls
+          label.checkbox Remember me
+            input(type="checkbox")
+    a(href="#signApp") need an account?
+
+// tabs
+// places tab
+script(type='text/html', id='places')
+    .navbar
+        .navbar-inner
+            a.brand Places
+            ul.nav
+                li.active
+                    a(href="#places/Library") Library
+                li
+                    a(href="#places/new") New Place
+                li
+                    a(href="#places/services") Services
+    .well.placesView
+
+// events tab
+script(type='text/html', id='events')
+    .navbar
+        .navbar-inner
+            a.brand Events
+            ul.nav
+                li.active
+                    a(href="#") Library
+                li
+                    a(href="#") New Event
+    .well.eventsView
+
+// setting tab
+script(type='text/html', id='settings')
+    form.form-horizontal.well(name='settings', action='/app/settings')
+          .control-group
+            label.control-label(for="appName") App Name
+            .controls
+              input(type="text", id="appName", name="appName", placeholder="App Name")
+
+          .control-group
+            label.control-label(for="inputPassword") Password
+            .controls
+              input(type="password", id="inputPassword", placeholder="Password")
+          .control-group
+            .controls
+              label.checkbox Remember me
+                input(type="checkbox")
+
+// mainMenu
+script(type='text/html', id='mainMenuTemplate')
+    .navbar.navbar-inverse.navbar-fixed-top
+        .navbar-inner
+          .container
+            a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.brand(href='#') Placer
+            .nav-collapse.collapse
+              p.navbar-text.pull-right.quickUserView
+
+              ul.nav
+                li.active
+                  a(href='#') Home
+                li
+                  a(href='#about') About
+                li
+                  a(href='#contact') Contact
+
+
+// mainLayout
+script(type='text/html', id='mainLayoutTemplate')
+    .mainLayout.clearAll
+            .span3.well.clearAll.leftMainMenu
+            .span9.detailsView
