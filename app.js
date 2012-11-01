@@ -8,6 +8,7 @@
   ,  controllers = require('./controllers')
   ,         http = require('http')
   ,        mongo = require("mongoskin")
+  ,  middlewares = require("./middlewares")
   ,         path = require('path');
 
 var conStr = process.env.MONGOHQ_URL || 'localhost:27017/test';
@@ -25,10 +26,12 @@ app.configure(function(){
   app.use(express.cookieParser('placer-secret-key'));
   app.use(express.session);
   app.use(mongo_entity.addLocals);
+  app.use(middlewares.addAdminUILocals);
   app.use(decorator);
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
 });
+
 
 app.configure('development', function(){
   app.use(express.errorHandler());
